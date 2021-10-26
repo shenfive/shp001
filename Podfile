@@ -11,5 +11,6 @@ target 'shp001' do
   # Pods for shp001
   #pod 'Firebase/Core'
     pod 'Firebase/Database'
+    pod 'Firebase/Auth'
 
 end
