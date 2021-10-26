@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67DAB56C7DCDA746C50DAB8E /* Pods_shp001.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24488FE5028C1BF7EB88B297 /* Pods_shp001.framework */; };
 		BAC3F62E2728207E003AD926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F62D2728207E003AD926 /* AppDelegate.swift */; };
 		BAC3F6302728207E003AD926 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F62F2728207E003AD926 /* SceneDelegate.swift */; };
 		BAC3F6322728207E003AD926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F6312728207E003AD926 /* ViewController.swift */; };
 		BAC3F6352728207E003AD926 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F6332728207E003AD926 /* Main.storyboard */; };
 		BAC3F6372728207F003AD926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F6362728207F003AD926 /* Assets.xcassets */; };
 		BAC3F63A2728207F003AD926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F6382728207F003AD926 /* LaunchScreen.storyboard */; };
+		BAC3F64227283972003AD926 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F64127283972003AD926 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24488FE5028C1BF7EB88B297 /* Pods_shp001.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shp001.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		732BDADC3A604A121580332A /* Pods-shp001.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shp001.debug.xcconfig"; path = "Target Support Files/Pods-shp001/Pods-shp001.debug.xcconfig"; sourceTree = "<group>"; };
 		BAC3F62A2728207E003AD926 /* shp001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shp001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC3F62D2728207E003AD926 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAC3F62F2728207E003AD926 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		BAC3F6362728207F003AD926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAC3F6392728207F003AD926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAC3F63B2728207F003AD926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAC3F64127283972003AD926 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EE46B511CFD9994D9760101E /* Pods-shp001.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shp001.release.xcconfig"; path = "Target Support Files/Pods-shp001/Pods-shp001.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67DAB56C7DCDA746C50DAB8E /* Pods_shp001.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				BAC3F62C2728207E003AD926 /* shp001 */,
 				BAC3F62B2728207E003AD926 /* Products */,
+				DADA16B161A13A1B06EEDBB2 /* Pods */,
+				CD51CF93F6D7F8BA08B329C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +68,31 @@
 				BAC3F62D2728207E003AD926 /* AppDelegate.swift */,
 				BAC3F62F2728207E003AD926 /* SceneDelegate.swift */,
 				BAC3F6312728207E003AD926 /* ViewController.swift */,
+				BAC3F64127283972003AD926 /* GoogleService-Info.plist */,
 				BAC3F6332728207E003AD926 /* Main.storyboard */,
 				BAC3F6362728207F003AD926 /* Assets.xcassets */,
 				BAC3F6382728207F003AD926 /* LaunchScreen.storyboard */,
 				BAC3F63B2728207F003AD926 /* Info.plist */,
 			);
 			path = shp001;
+			sourceTree = "<group>";
+		};
+		CD51CF93F6D7F8BA08B329C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24488FE5028C1BF7EB88B297 /* Pods_shp001.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DADA16B161A13A1B06EEDBB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				732BDADC3A604A121580332A /* Pods-shp001.debug.xcconfig */,
+				EE46B511CFD9994D9760101E /* Pods-shp001.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAC3F63E2728207F003AD926 /* Build configuration list for PBXNativeTarget "shp001" */;
 			buildPhases = (
+				327BE61B7C42DB287147F296 /* [CP] Check Pods Manifest.lock */,
 				BAC3F6262728207E003AD926 /* Sources */,
 				BAC3F6272728207E003AD926 /* Frameworks */,
 				BAC3F6282728207E003AD926 /* Resources */,
+				2E4DFF94DA0BD1BA9AE91570 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +156,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC3F63A2728207F003AD926 /* LaunchScreen.storyboard in Resources */,
+				BAC3F64227283972003AD926 /* GoogleService-Info.plist in Resources */,
 				BAC3F6372728207F003AD926 /* Assets.xcassets in Resources */,
 				BAC3F6352728207E003AD926 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E4DFF94DA0BD1BA9AE91570 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-shp001/Pods-shp001-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-shp001/Pods-shp001-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-shp001/Pods-shp001-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		327BE61B7C42DB287147F296 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-shp001-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BAC3F6262728207E003AD926 /* Sources */ = {
@@ -217,7 +290,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,6 +357,7 @@
 		};
 		BAC3F63F2728207F003AD926 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 732BDADC3A604A121580332A /* Pods-shp001.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,10 +366,12 @@
 				DEVELOPMENT_TEAM = XSVW22JPST;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = shp001/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "史丹佛J01系統";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,6 +388,7 @@
 		};
 		BAC3F6402728207F003AD926 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE46B511CFD9994D9760101E /* Pods-shp001.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,10 +397,12 @@
 				DEVELOPMENT_TEAM = XSVW22JPST;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = shp001/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "史丹佛J01系統";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
