@@ -7,6 +7,13 @@
 
 import UIKit
 
+extension UIViewController{
+    func showAlert(_ message:String){
+        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "確定", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+}
 
 extension String{
     

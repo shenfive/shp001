@@ -14,12 +14,13 @@
 		BAC3F6352728207E003AD926 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F6332728207E003AD926 /* Main.storyboard */; };
 		BAC3F6372728207F003AD926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F6362728207F003AD926 /* Assets.xcassets */; };
 		BAC3F63A2728207F003AD926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F6382728207F003AD926 /* LaunchScreen.storyboard */; };
-		BAC3F64227283972003AD926 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F64127283972003AD926 /* GoogleService-Info.plist */; };
 		BAC3F64627284A83003AD926 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F64527284A83003AD926 /* Tools.swift */; };
 		BAC3F64827284B0F003AD926 /* ToastMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F64727284B0F003AD926 /* ToastMessageView.xib */; };
 		BAC3F64A27284B20003AD926 /* ToastMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F64927284B20003AD926 /* ToastMessageView.swift */; };
 		BAC3F64C27284B50003AD926 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F64B27284B50003AD926 /* Extensions.swift */; };
 		BAC3F64E27285DB3003AD926 /* CopyRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F64D27285DB3003AD926 /* CopyRightViewController.swift */; };
+		BAC3F65027298196003AD926 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F64F27298196003AD926 /* GoogleService-Info.plist */; };
+		BAC3F65227298FBB003AD926 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F65127298FBB003AD926 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,12 +34,13 @@
 		BAC3F6362728207F003AD926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAC3F6392728207F003AD926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAC3F63B2728207F003AD926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAC3F64127283972003AD926 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAC3F64527284A83003AD926 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		BAC3F64727284B0F003AD926 /* ToastMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastMessageView.xib; sourceTree = "<group>"; };
 		BAC3F64927284B20003AD926 /* ToastMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastMessageView.swift; sourceTree = "<group>"; };
 		BAC3F64B27284B50003AD926 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BAC3F64D27285DB3003AD926 /* CopyRightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyRightViewController.swift; sourceTree = "<group>"; };
+		BAC3F64F27298196003AD926 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BAC3F65127298FBB003AD926 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		EE46B511CFD9994D9760101E /* Pods-shp001.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shp001.release.xcconfig"; path = "Target Support Files/Pods-shp001/Pods-shp001.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,8 +81,8 @@
 				BAC3F62D2728207E003AD926 /* AppDelegate.swift */,
 				BAC3F62F2728207E003AD926 /* SceneDelegate.swift */,
 				BAC3F6312728207E003AD926 /* ViewController.swift */,
+				BAC3F64F27298196003AD926 /* GoogleService-Info.plist */,
 				BAC3F64B27284B50003AD926 /* Extensions.swift */,
-				BAC3F64127283972003AD926 /* GoogleService-Info.plist */,
 				BAC3F64927284B20003AD926 /* ToastMessageView.swift */,
 				BAC3F6332728207E003AD926 /* Main.storyboard */,
 				BAC3F6362728207F003AD926 /* Assets.xcassets */,
@@ -88,6 +90,7 @@
 				BAC3F63B2728207F003AD926 /* Info.plist */,
 				BAC3F64527284A83003AD926 /* Tools.swift */,
 				BAC3F64D27285DB3003AD926 /* CopyRightViewController.swift */,
+				BAC3F65127298FBB003AD926 /* AccountViewController.swift */,
 			);
 			path = shp001;
 			sourceTree = "<group>";
@@ -170,8 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC3F63A2728207F003AD926 /* LaunchScreen.storyboard in Resources */,
-				BAC3F64227283972003AD926 /* GoogleService-Info.plist in Resources */,
 				BAC3F6372728207F003AD926 /* Assets.xcassets in Resources */,
+				BAC3F65027298196003AD926 /* GoogleService-Info.plist in Resources */,
 				BAC3F64827284B0F003AD926 /* ToastMessageView.xib in Resources */,
 				BAC3F6352728207E003AD926 /* Main.storyboard in Resources */,
 			);
@@ -228,6 +231,7 @@
 			files = (
 				BAC3F6322728207E003AD926 /* ViewController.swift in Sources */,
 				BAC3F62E2728207E003AD926 /* AppDelegate.swift in Sources */,
+				BAC3F65227298FBB003AD926 /* AccountViewController.swift in Sources */,
 				BAC3F64E27285DB3003AD926 /* CopyRightViewController.swift in Sources */,
 				BAC3F64C27284B50003AD926 /* Extensions.swift in Sources */,
 				BAC3F6302728207E003AD926 /* SceneDelegate.swift in Sources */,

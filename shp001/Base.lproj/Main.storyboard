@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qri-eQ-7HE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qri-eQ-7HE">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -59,6 +59,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="登入">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tryToLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cNP-rm-7CK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -100,7 +103,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbf-RI-yYt">
                                 <rect key="frame" x="40" y="110" width="688" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">        本程式由華夏科技大學設計與撰寫，授權史丹佛健康美學使用，華夏科技大學保留所有相關法律上的權利。   程式之程式碼、畫面、圖片敘述均屬「華夏科技大學」（以下簡稱所有者）所有，任何轉載、複製等利用，請先取得所有者同意。
+                                <string key="text">        本程式由華夏科技大學設計與撰寫，授權史丹佛健康美學使用，華夏科技大學保留所有相關法律上的權利。   程式之程式碼、畫面、圖片敘述均屬「華夏科技大學」（以下簡稱所有者）所有，任何轉載、複製等利用，請先取得所有者同意。
 
         本程內的所有內容，如文字、圖像、影音及軟體等之版權，除特別指明外，均為本公司所有或已獲得版權持有者授權使用。
 
@@ -111,7 +114,7 @@
 
        本程式為限制性使用，若您應可以使用，但沒有可用登入帳號，請與開發者連繫。 
 
-       若您確認已有帳號，但無法確認密碼，請按左下方按鈕進行重置密碼。</mutableString>
+       若您確認已有帳號，但無法確認密碼，請按左下方按鈕進行重置密碼。</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -167,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="790.625" y="68.5546875"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="Kku-yC-3Z3">
             <objects>
                 <viewController id="VZn-6L-R9Z" sceneMemberID="viewController">
@@ -177,13 +180,13 @@
                         <viewLayoutGuide key="safeArea" id="el5-m1-93g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="JqJ-Py-a4U"/>
+                    <navigationItem key="navigationItem" id="dk8-dj-des"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXT-5q-Pgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="755" y="1868"/>
+            <point key="canvasLocation" x="3051.5625" y="1867.9687499999998"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="wYh-2m-AhA">
             <objects>
                 <viewController id="oJT-AQ-G07" sceneMemberID="viewController">
@@ -193,32 +196,55 @@
                         <viewLayoutGuide key="safeArea" id="Rhn-6R-cJP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="vW3-GX-shn"/>
+                    <navigationItem key="navigationItem" id="Y5r-xy-GIv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muH-2r-dRp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="1868"/>
+            <point key="canvasLocation" x="1576.5625" y="1867.9687499999998"/>
         </scene>
-        <!--Item-->
+        <!--Account View Controller-->
         <scene sceneID="Byh-zo-NfV">
             <objects>
-                <viewController id="cO2-63-k6d" sceneMemberID="viewController">
+                <viewController id="cO2-63-k6d" customClass="AccountViewController" customModule="shp001" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yhw-Tf-QQF">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a3-fP-MiD">
+                                <rect key="frame" x="79" y="138" width="216" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="登出"/>
+                                <connections>
+                                    <action selector="signOut:" destination="cO2-63-k6d" eventType="touchUpInside" id="waM-az-6ZT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw6-9n-8yc">
+                                <rect key="frame" x="79" y="239" width="216" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="帳號清單"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXJ-Bh-zvp">
+                                <rect key="frame" x="79" y="189" width="216" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="變更密碼"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1NP-vw-dnp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="shp-mainBackGround"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="NKm-ho-iiG"/>
+                    <navigationItem key="navigationItem" id="8YC-WR-EU2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEr-5q-BDw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655" y="1868"/>
+            <point key="canvasLocation" x="110.15625" y="1867.9687499999998"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rqC-9U-haD">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="aBu-S4-9fc" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainInitTabBarVC" automaticallyAdjustsScrollViewInsets="NO" id="aBu-S4-9fc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WKZ-UU-lKx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -226,9 +252,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="VZn-6L-R9Z" kind="relationship" relationship="viewControllers" id="04B-vW-kEd"/>
-                        <segue destination="oJT-AQ-G07" kind="relationship" relationship="viewControllers" id="oTs-r3-s3J"/>
-                        <segue destination="cO2-63-k6d" kind="relationship" relationship="viewControllers" id="g1g-ki-jJe"/>
+                        <segue destination="FVv-1J-g1h" kind="relationship" relationship="viewControllers" id="g1g-ki-jJe"/>
+                        <segue destination="Ika-ck-UL9" kind="relationship" relationship="viewControllers" id="04B-vW-kEd"/>
+                        <segue destination="fo7-zN-uZF" kind="relationship" relationship="viewControllers" id="oTs-r3-s3J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAS-p0-Mpx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -253,12 +279,72 @@
             </objects>
             <point key="canvasLocation" x="-759" y="69"/>
         </scene>
+        <!--帳號管理-->
+        <scene sceneID="uiv-Bo-aAE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FVv-1J-g1h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="帳號管理" image="copyright" selectedImage="copyright" id="NKm-ho-iiG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eVR-Ca-Oh0">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cO2-63-k6d" kind="relationship" relationship="rootViewController" id="2Hr-Te-hMb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XVb-bO-QE8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-655.46875" y="1867.9687499999998"/>
+        </scene>
+        <!--訂單管理-->
+        <scene sceneID="d6O-kV-FHr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fo7-zN-uZF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="訂單管理" image="square.and.arrow.up" catalog="system" selectedImage="copyright" id="vW3-GX-shn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OLt-VI-q1n">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oJT-AQ-G07" kind="relationship" relationship="rootViewController" id="P5J-Kx-NO2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ggh-UZ-XDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810.9375" y="1867.9687499999998"/>
+        </scene>
+        <!--奬勵金計算-->
+        <scene sceneID="CkW-6J-kbx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ika-ck-UL9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="奬勵金計算" image="square.and.arrow.up.circle" catalog="system" selectedImage="square.and.arrow.up.circle.fill" id="JqJ-Py-a4U"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5rV-zs-bag">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VZn-6L-R9Z" kind="relationship" relationship="rootViewController" id="Hkd-OG-4xY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8tL-2D-qgp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2285.9375" y="1867.9687499999998"/>
+        </scene>
     </scenes>
     <resources>
         <image name="copyright" width="32" height="32"/>
         <image name="logo" width="277" height="86.5"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="square.and.arrow.up.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="shp-mainBackGround">
-            <color red="0.78431372549019607" green="1" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7839999794960022" green="1" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
