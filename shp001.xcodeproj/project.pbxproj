@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67DAB56C7DCDA746C50DAB8E /* Pods_shp001.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24488FE5028C1BF7EB88B297 /* Pods_shp001.framework */; };
+		BA1A1DF3272AC91C00FDD1A9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A1DF2272AC91C00FDD1A9 /* ChangePasswordViewController.swift */; };
 		BAC3F62E2728207E003AD926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F62D2728207E003AD926 /* AppDelegate.swift */; };
 		BAC3F6302728207E003AD926 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F62F2728207E003AD926 /* SceneDelegate.swift */; };
 		BAC3F6322728207E003AD926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F6312728207E003AD926 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		24488FE5028C1BF7EB88B297 /* Pods_shp001.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shp001.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		732BDADC3A604A121580332A /* Pods-shp001.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shp001.debug.xcconfig"; path = "Target Support Files/Pods-shp001/Pods-shp001.debug.xcconfig"; sourceTree = "<group>"; };
+		BA1A1DF2272AC91C00FDD1A9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		BAC3F62A2728207E003AD926 /* shp001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shp001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC3F62D2728207E003AD926 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAC3F62F2728207E003AD926 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				BAC3F64527284A83003AD926 /* Tools.swift */,
 				BAC3F64D27285DB3003AD926 /* CopyRightViewController.swift */,
 				BAC3F65127298FBB003AD926 /* AccountViewController.swift */,
+				BA1A1DF2272AC91C00FDD1A9 /* ChangePasswordViewController.swift */,
 			);
 			path = shp001;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				BAC3F6322728207E003AD926 /* ViewController.swift in Sources */,
 				BAC3F62E2728207E003AD926 /* AppDelegate.swift in Sources */,
 				BAC3F65227298FBB003AD926 /* AccountViewController.swift in Sources */,
+				BA1A1DF3272AC91C00FDD1A9 /* ChangePasswordViewController.swift in Sources */,
 				BAC3F64E27285DB3003AD926 /* CopyRightViewController.swift in Sources */,
 				BAC3F64C27284B50003AD926 /* Extensions.swift in Sources */,
 				BAC3F6302728207E003AD926 /* SceneDelegate.swift in Sources */,

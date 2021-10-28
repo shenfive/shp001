@@ -6,18 +6,36 @@
 //
 
 import UIKit
+import CommonCrypto
 
 extension UIViewController{
-    func showAlert(_ message:String){
+    func showAlert(_ message:String,action:((UIAlertAction)->())? = nil){
         let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "確定", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "確定", style: .default, handler: action))
         present(alertController, animated: true, completion: nil)
     }
 }
 
 extension String{
-    
 
+    func md5() -> String {
+        if let strData = self.data(using: String.Encoding.utf8) {
+            var digest = [UInt8](repeating: 0, count:Int(CC_MD5_DIGEST_LENGTH))
+    
+            strData.withUnsafeBytes {
+                CC_MD5($0.baseAddress, UInt32(strData.count), &digest)
+            }
+            var md5String = ""
+            for byte in digest {
+                md5String += String(format:"%02x", UInt8(byte))
+            }
+            return md5String
+     
+        }
+        return ""
+    }
+    
+    
     
     func subString(start: Int, end: Int) -> String {
         // 字元長度不足時，可能出現錯誤所以檢查長度, 且不能小於零
@@ -119,3 +137,6 @@ func getTextViewHeight(cellWidth:CGFloat,contentString:String,fontSize:CGFloat)-
     let descriptionSize = descriptionString.boundingRect(with: maximumSize, options: .usesLineFragmentOrigin, attributes: [kCTFontAttributeName as NSAttributedString.Key: font], context: nil).size
     return descriptionSize.height
 }
+
+
+

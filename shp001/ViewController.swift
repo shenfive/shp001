@@ -56,6 +56,10 @@ class ViewController: UIViewController {
                         Tools.showToastMessage(message: "已登出", duration: 5)
                     })
                 }
+                auth.signInAnonymously { result, error in
+
+
+                }
             }
         }
     }
@@ -69,22 +73,32 @@ class ViewController: UIViewController {
             return
         }
         
-        if password.count < 6 || password.count > 8 {
-            showAlert("密碼應為 6~8 碼")
+        if password.count < 6  {
+            showAlert("密碼為 6 碼以上的英文/數字")
             return
         }
     
         print(ref.child("userK/\(account)"))
         
+        Tools.showIndicator(inController: self)
         ref.child("userK/\(account)").observeSingleEvent(of: .value, with: { snapshot in
             // Get user value
             print(snapshot.value)
             let realAccount = snapshot.value as? String
             if let realAccount = realAccount{
                 self.auth.signIn(withEmail: realAccount, password: password) { result, error in
+                    Tools.removeIndicator(inController: self)
                     if let error = error{
-                        self.showAlert(error.localizedDescription)
-                        
+                        self.showAlert("登入錯誤:\(error.localizedDescription)")
+                    }
+                    
+                    //存下最後一個 password
+                    if let user = result?.user{
+                        UserDefaults.standard.setValue(password.md5(), forKey: "lastPasword")
+                        UserDefaults.standard.synchronize()
+                        self.passwordTextField.text = nil
+                        self.accountTextField.text = nil
+                        print("pp:\(password.md5())")
                     }
                     
                     print("xxxA")
@@ -94,14 +108,17 @@ class ViewController: UIViewController {
                     print("xxxC")
                 }
             }else{
+                Tools.removeIndicator(inController: self)
                 self.showAlert("帳號不存在，請再確認一次")
             }
             
             
             // ...
         }) { error in
+            Tools.removeIndicator(inController: self)
             print(error.localizedDescription)
             print("dddd")
+            self.showAlert("登入錯系統發生錯誤請\n稍候再試或與管理人員連絡\n代碼：\(error.localizedDescription)")
         }
         
 
