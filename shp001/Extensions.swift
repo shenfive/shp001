@@ -138,5 +138,16 @@ func getTextViewHeight(cellWidth:CGFloat,contentString:String,fontSize:CGFloat)-
     return descriptionSize.height
 }
 
+//檢查 10
+func validateCellPhone(_ numString:String)->Bool{
+    let passwordRE = "09[0-9]{8}"
+    
+    let regextestmobile = NSPredicate(format: "SELF MATCHES %@",passwordRE)
+    if (regextestmobile.evaluate(with: numString) == true){
+        return true
+    }else{
+        return false
+    }
+}
 
 

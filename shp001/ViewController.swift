@@ -27,38 +27,30 @@ class ViewController: UIViewController {
         ref = Database.database().reference()
         auth = FirebaseAuth.Auth.auth()
         
-        
         if auth.currentUser == nil {
             auth.signInAnonymously { result, error in
-
-
             }
         }
-        
-        
         
         auth.addStateDidChangeListener { auth, user in
             if let user = user{
                 if auth.currentUser?.isAnonymous == true{
-                    print("sign in")
-                    print("=========A")
+                    print("sign in with Anonymous")
                 }else{
-                    print("=========B")
-                    print(auth.currentUser?.email)
                     let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainInitTabBarVC") as! UITabBarController
                     nextVC.modalPresentationStyle = .fullScreen
                     self.present(nextVC, animated: true, completion: nil)
                 }
             }else{
+                //登出時，回到登入頁
                 let currentVC = Tools.getTopViewController()
                 if currentVC != self{
                     currentVC?.navigationController?.viewControllers[0].dismiss(animated: true, completion: {
-                        Tools.showToastMessage(message: "已登出", duration: 5)
+                        Tools.showToastMessage(message: "已登出", duration: 4)
                     })
                 }
+                //登出時自動匿名登入，以存取資料庫
                 auth.signInAnonymously { result, error in
-
-
                 }
             }
         }
@@ -68,7 +60,7 @@ class ViewController: UIViewController {
     @IBAction func tryToLogin(_ sender: Any) {
         let account = accountTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-        if account.count < 10 {
+        if validateCellPhone(account) !=  true {
             showAlert("帳號應為 10 碼手機號碼")
             return
         }
@@ -77,9 +69,7 @@ class ViewController: UIViewController {
             showAlert("密碼為 6 碼以上的英文/數字")
             return
         }
-    
-        print(ref.child("userK/\(account)"))
-        
+
         Tools.showIndicator(inController: self)
         ref.child("userK/\(account)").observeSingleEvent(of: .value, with: { snapshot in
             // Get user value
@@ -100,31 +90,15 @@ class ViewController: UIViewController {
                         self.accountTextField.text = nil
                         print("pp:\(password.md5())")
                     }
-                    
-                    print("xxxA")
-                    print(result?.user)
-                    print("xxxB")
-                    print(error)
-                    print("xxxC")
                 }
             }else{
                 Tools.removeIndicator(inController: self)
                 self.showAlert("帳號不存在，請再確認一次")
             }
-            
-            
-            // ...
         }) { error in
             Tools.removeIndicator(inController: self)
-            print(error.localizedDescription)
-            print("dddd")
             self.showAlert("登入錯系統發生錯誤請\n稍候再試或與管理人員連絡\n代碼：\(error.localizedDescription)")
         }
-        
-
-        
     }
-    
-    
 }
 
