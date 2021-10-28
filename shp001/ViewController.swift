@@ -73,7 +73,6 @@ class ViewController: UIViewController {
         Tools.showIndicator(inController: self)
         ref.child("userK/\(account)").observeSingleEvent(of: .value, with: { snapshot in
             // Get user value
-            print(snapshot.value)
             let realAccount = snapshot.value as? String
             if let realAccount = realAccount{
                 self.auth.signIn(withEmail: realAccount, password: password) { result, error in
