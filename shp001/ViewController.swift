@@ -84,9 +84,10 @@ class ViewController: UIViewController {
                                 self.showAlert("登入錯誤:\(error.localizedDescription)")
                             }
                             
-                            //存下最後一個 password
+                            //存下最後一個 password / account
                             if let user = result?.user{
-                                UserDefaults.standard.setValue(password.md5(), forKey: "lastPasword")
+                                UserDefaults.standard.setValue(password, forKey: "lastPasword")
+                                UserDefaults.standard.setValue(realAccount, forKey: "lastAccount")
                                 UserDefaults.standard.synchronize()
                                 self.passwordTextField.text = nil
                                 self.accountTextField.text = nil

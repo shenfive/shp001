@@ -35,6 +35,7 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
         removeItroButton.layer.cornerRadius = 16.5
         createAccountButton.layer.cornerRadius = 22
         ref = Database.database().reference()
+        print(birthdatDatePicker.date.timeIntervalSince1970)
     }
     
 
@@ -71,7 +72,7 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
     
     @IBAction func createAccountAction(_ sender: Any) {
         let email = (emailTextField.text ?? "").lowercased()
-        let name = nameTextField.text ?? ""
+        let displayName = nameTextField.text ?? ""
         let phone = phoneTextField.text ?? ""
         let level = memberLevelPicker.selectedRow(inComponent: 0)
         let lineAccount = lineAccountTextField.text ?? ""
@@ -80,7 +81,9 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
         print(birthday.timeIntervalSince1970)
         
         
-        if name.count < 2{
+    
+        
+        if displayName.count < 2{
             showAlert("請輸入姓名，至少兩個字元")
             return
         }
@@ -100,9 +103,78 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
             return
         }
         
-        if birthday.timeIntervalSince1970 == 946695601.2332611 {
+        if birthday.timeIntervalSince1970 == 1609383601.233261 {
             showAlert("請確實選擇出生日期")
             return
+        }
+        
+        Tools.showIndicator(inController: self)
+        ref.child("userK/\(phone)").observeSingleEvent(of: .value) { snapshot1 in
+            let name = snapshot1.value as? String // 不能有相同號碼
+            if let name = name{
+                Tools.removeIndicator(inController: self)
+                self.showAlert("這個電話己由【\(name)】使用，請使用其他號碼")
+                return
+            }else{
+                let encodeEmail = email.replacingOccurrences(of: ".", with: "@@")
+                self.ref.child("userE/\(encodeEmail)").observeSingleEvent(of: .value) { snapshot2 in
+                    let name2 = snapshot2.value as? String
+                    if let name2 = name2 {
+                        Tools.removeIndicator(inController: self)
+                        self.showAlert("這個電子郵件己由【\(name2)】使用，請使用其他電子郵件")
+                    }else{
+                        //正式建立帳號
+                        
+                        let formater = DateFormatter()
+                        formater.dateFormat = "yyyy-MM-dd"
+                        let birthdayString = formater.string(from: birthday)
+                        let formater2 = DateFormatter()
+                        formater2.dateFormat = "yyMMdd"
+                        let initPassword = formater2.string(from: birthday)
+                        let alert = UIAlertController(title: "再次確認",
+                                                      message: "請注意，【電子郵件】與【手機號碼】一旦建立，無法修改，也無法刪除，請再次確認資料無誤\n\n電話:\(phone)\n手機號碼\(phone)\n電子郵件:\(email)姓名:\(displayName)\n初始密碼:\(initPassword)",
+                                                      preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+                        alert.addAction(UIAlertAction(title: "確認建立", style: .default, handler: { action in
+                            Auth.auth().createUser(withEmail: email,
+                                                   password: initPassword) { result, error in
+                                
+                                if let error = error{
+                                    Tools.removeIndicator(inController: self)
+                                    self.showAlert("建立帳號錯誤\nCode:\(error.localizedDescription)")
+                                }else{
+                                    let item = ["birth":birthdayString,
+                                                "deat":false,
+                                                "email":email,
+                                                "intor":self.selectedIntroduer ?? "no",
+                                                "lavel":level,
+                                                "line":lineAccount,
+                                                "name":displayName] as [String : Any]
+                                    self.ref.child("users/\(phone)").setValue(item)
+                                    self.ref.child("userE/\(encodeEmail)").setValue(phone)
+                                    self.ref.child("userK/\(phone)").setValue(displayName)
+                                    let lastAccount = UserDefaults.standard.value(forKey: "lastAccount") as! String
+                                    let lastPasword = UserDefaults.standard.value(forKey: "lastPasword") as! String
+                                    Auth.auth().signIn(withEmail: lastAccount,
+                                                       password: lastPasword) { result, error in
+                                        Tools.removeIndicator(inController: self)
+                                        print("UserUID")
+                                        print(Auth.auth().currentUser?.uid)
+                                        if let error = error{
+                                            self.showAlert("重登帳號錯誤\nCode:\(error.localizedDescription)")
+                                        }else{
+                                            self.showAlert("成功建立帳號！\n帳號:\(phone)\n初始密碼:\(initPassword)") { action in
+                                                self.navigationController?.popViewController(animated: true)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
         }
         
         

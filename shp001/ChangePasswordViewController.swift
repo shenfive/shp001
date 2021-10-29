@@ -32,7 +32,7 @@ class ChangePasswordViewController: UIViewController {
         let currentPW = currentPassworTextField.text ?? ""
         let newPW = newPasswordTextField.text ?? ""
         let checkPW = checkNewPasswordTextField.text ?? ""
-        let oldPWmd5 = UserDefaults.standard.value(forKey: "lastPasword") as! String
+        let lastPW = UserDefaults.standard.value(forKey: "lastPasword") as! String
         
         if currentPW.count < 6 {
             showAlert("原密確應為 6 碼以上英數字")
@@ -50,7 +50,7 @@ class ChangePasswordViewController: UIViewController {
         }
         
         
-        if currentPW.md5() != oldPWmd5{
+        if currentPW != lastPW{
             showAlert("舊密碼不正確，請再檢查一次")
             return
         }

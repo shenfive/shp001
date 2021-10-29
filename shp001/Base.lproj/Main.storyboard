@@ -511,8 +511,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電話(手機)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kD-Nd-MN2">
-                                <rect key="frame" x="40" y="161" width="82" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機號碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kD-Nd-MN2">
+                                <rect key="frame" x="40" y="161" width="70" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="vjM-5M-Kec"/>
                                 </constraints>
@@ -547,8 +547,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="zg2-gB-zaw"/>
                                 </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="-31611598.766738892">
-                                    <!--2000-01-01 03:00:01 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="631076401.23326111">
+                                    <!--2020-12-31 03:00:01 +0000-->
                                 </date>
                                 <date key="maximumDate" timeIntervalSinceReferenceDate="631105200">
                                     <!--2020-12-31 11:00:00 +0000-->
