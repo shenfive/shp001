@@ -71,25 +71,38 @@ class ViewController: UIViewController {
         }
 
         Tools.showIndicator(inController: self)
-        ref.child("userK/\(account)").observeSingleEvent(of: .value, with: { snapshot in
+        ref.child("users/\(account)/email").observeSingleEvent(of: .value, with: { snapshot in
             // Get user value
             let realAccount = snapshot.value as? String
             if let realAccount = realAccount{
-                self.auth.signIn(withEmail: realAccount, password: password) { result, error in
-                    Tools.removeIndicator(inController: self)
-                    if let error = error{
-                        self.showAlert("登入錯誤:\(error.localizedDescription)")
-                    }
-                    
-                    //存下最後一個 password
-                    if let user = result?.user{
-                        UserDefaults.standard.setValue(password.md5(), forKey: "lastPasword")
-                        UserDefaults.standard.synchronize()
-                        self.passwordTextField.text = nil
-                        self.accountTextField.text = nil
-                        print("pp:\(password.md5())")
+                self.ref.child("users/\(account)/deat").observeSingleEvent(of: .value) { snapshot in
+                    let isDeAtived = snapshot.value as? Bool
+                    if isDeAtived != true{
+                        self.auth.signIn(withEmail: realAccount, password: password) { result, error in
+                            Tools.removeIndicator(inController: self)
+                            if let error = error{
+                                self.showAlert("登入錯誤:\(error.localizedDescription)")
+                            }
+                            
+                            //存下最後一個 password
+                            if let user = result?.user{
+                                UserDefaults.standard.setValue(password.md5(), forKey: "lastPasword")
+                                UserDefaults.standard.synchronize()
+                                self.passwordTextField.text = nil
+                                self.accountTextField.text = nil
+                                print("pp:\(password.md5())")
+                            }
+                        }
+                    }else{
+                        Tools.removeIndicator(inController: self)
+                        self.showAlert("你的帳號己被停用，請與管理者連絡")
                     }
                 }
+            
+                
+                
+                
+                
             }else{
                 Tools.removeIndicator(inController: self)
                 self.showAlert("帳號不存在，請再確認一次")

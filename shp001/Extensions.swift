@@ -138,7 +138,7 @@ func getTextViewHeight(cellWidth:CGFloat,contentString:String,fontSize:CGFloat)-
     return descriptionSize.height
 }
 
-//檢查 10
+//檢查 10 碼手機號碼
 func validateCellPhone(_ numString:String)->Bool{
     let passwordRE = "09[0-9]{8}"
     
@@ -148,6 +148,14 @@ func validateCellPhone(_ numString:String)->Bool{
     }else{
         return false
     }
+}
+
+
+//檢查電子郵件格式
+func validateEmail(_ str:String)->Bool{
+    let emailRegex: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+    let emailTest: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+    return emailTest.evaluate(with: str)
 }
 
 

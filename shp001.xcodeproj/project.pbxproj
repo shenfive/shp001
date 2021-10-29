@@ -11,6 +11,8 @@
 		BA1A1DF3272AC91C00FDD1A9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A1DF2272AC91C00FDD1A9 /* ChangePasswordViewController.swift */; };
 		BA1A1DF5272AF8F500FDD1A9 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A1DF4272AF8F500FDD1A9 /* ForgetPasswordViewController.swift */; };
 		BA1A1DF7272B07FE00FDD1A9 /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A1DF6272B07FE00FDD1A9 /* CreateNewAccountViewController.swift */; };
+		BAB2F52C272C254700C3C78E /* IntroducerPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2F52B272C254700C3C78E /* IntroducerPickerViewController.swift */; };
+		BAB2F52E272C386000C3C78E /* IntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2F52D272C386000C3C78E /* IntroTableViewCell.swift */; };
 		BAC3F62E2728207E003AD926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F62D2728207E003AD926 /* AppDelegate.swift */; };
 		BAC3F6302728207E003AD926 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F62F2728207E003AD926 /* SceneDelegate.swift */; };
 		BAC3F6322728207E003AD926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F6312728207E003AD926 /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 		BA1A1DF2272AC91C00FDD1A9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		BA1A1DF4272AF8F500FDD1A9 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		BA1A1DF6272B07FE00FDD1A9 /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
+		BAB2F52B272C254700C3C78E /* IntroducerPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducerPickerViewController.swift; sourceTree = "<group>"; };
+		BAB2F52D272C386000C3C78E /* IntroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroTableViewCell.swift; sourceTree = "<group>"; };
 		BAC3F62A2728207E003AD926 /* shp001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shp001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC3F62D2728207E003AD926 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAC3F62F2728207E003AD926 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				BA1A1DF2272AC91C00FDD1A9 /* ChangePasswordViewController.swift */,
 				BA1A1DF4272AF8F500FDD1A9 /* ForgetPasswordViewController.swift */,
 				BA1A1DF6272B07FE00FDD1A9 /* CreateNewAccountViewController.swift */,
+				BAB2F52B272C254700C3C78E /* IntroducerPickerViewController.swift */,
+				BAB2F52D272C386000C3C78E /* IntroTableViewCell.swift */,
 			);
 			path = shp001;
 			sourceTree = "<group>";
@@ -249,6 +255,8 @@
 				BAC3F64627284A83003AD926 /* Tools.swift in Sources */,
 				BAC3F64A27284B20003AD926 /* ToastMessageView.swift in Sources */,
 				BA1A1DF7272B07FE00FDD1A9 /* CreateNewAccountViewController.swift in Sources */,
+				BAB2F52C272C254700C3C78E /* IntroducerPickerViewController.swift in Sources */,
+				BAB2F52E272C386000C3C78E /* IntroTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
