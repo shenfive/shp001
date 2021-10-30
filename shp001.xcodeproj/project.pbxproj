@@ -11,6 +11,8 @@
 		BA1A1DF3272AC91C00FDD1A9 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A1DF2272AC91C00FDD1A9 /* ChangePasswordViewController.swift */; };
 		BA1A1DF5272AF8F500FDD1A9 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A1DF4272AF8F500FDD1A9 /* ForgetPasswordViewController.swift */; };
 		BA1A1DF7272B07FE00FDD1A9 /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A1DF6272B07FE00FDD1A9 /* CreateNewAccountViewController.swift */; };
+		BA682814272D937D003FB983 /* OrderFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA682813272D937D003FB983 /* OrderFormViewController.swift */; };
+		BA682816272D95D0003FB983 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA682815272D95D0003FB983 /* NewOrderViewController.swift */; };
 		BAB2F52C272C254700C3C78E /* IntroducerPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2F52B272C254700C3C78E /* IntroducerPickerViewController.swift */; };
 		BAB2F52E272C386000C3C78E /* IntroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2F52D272C386000C3C78E /* IntroTableViewCell.swift */; };
 		BAC3F62E2728207E003AD926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F62D2728207E003AD926 /* AppDelegate.swift */; };
@@ -34,6 +36,8 @@
 		BA1A1DF2272AC91C00FDD1A9 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		BA1A1DF4272AF8F500FDD1A9 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		BA1A1DF6272B07FE00FDD1A9 /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
+		BA682813272D937D003FB983 /* OrderFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFormViewController.swift; sourceTree = "<group>"; };
+		BA682815272D95D0003FB983 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
 		BAB2F52B272C254700C3C78E /* IntroducerPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducerPickerViewController.swift; sourceTree = "<group>"; };
 		BAB2F52D272C386000C3C78E /* IntroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroTableViewCell.swift; sourceTree = "<group>"; };
 		BAC3F62A2728207E003AD926 /* shp001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shp001.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,8 @@
 				BA1A1DF6272B07FE00FDD1A9 /* CreateNewAccountViewController.swift */,
 				BAB2F52B272C254700C3C78E /* IntroducerPickerViewController.swift */,
 				BAB2F52D272C386000C3C78E /* IntroTableViewCell.swift */,
+				BA682813272D937D003FB983 /* OrderFormViewController.swift */,
+				BA682815272D95D0003FB983 /* NewOrderViewController.swift */,
 			);
 			path = shp001;
 			sourceTree = "<group>";
@@ -249,9 +255,11 @@
 				BA1A1DF5272AF8F500FDD1A9 /* ForgetPasswordViewController.swift in Sources */,
 				BAC3F65227298FBB003AD926 /* AccountViewController.swift in Sources */,
 				BA1A1DF3272AC91C00FDD1A9 /* ChangePasswordViewController.swift in Sources */,
+				BA682814272D937D003FB983 /* OrderFormViewController.swift in Sources */,
 				BAC3F64E27285DB3003AD926 /* CopyRightViewController.swift in Sources */,
 				BAC3F64C27284B50003AD926 /* Extensions.swift in Sources */,
 				BAC3F6302728207E003AD926 /* SceneDelegate.swift in Sources */,
+				BA682816272D95D0003FB983 /* NewOrderViewController.swift in Sources */,
 				BAC3F64627284A83003AD926 /* Tools.swift in Sources */,
 				BAC3F64A27284B20003AD926 /* ToastMessageView.swift in Sources */,
 				BA1A1DF7272B07FE00FDD1A9 /* CreateNewAccountViewController.swift in Sources */,

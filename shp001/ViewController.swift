@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "登入頁"
-        
+        UINavigationBar.appearance().backgroundColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor.blue
+        UINavigationBar.appearance().isTranslucent = false
         loginButton.clipsToBounds = true
         loginButton.layer.cornerRadius = 22
         
@@ -34,12 +36,41 @@ class ViewController: UIViewController {
         
         auth.addStateDidChangeListener { auth, user in
             if let user = user{
+                
                 if auth.currentUser?.isAnonymous == true{
                     print("sign in with Anonymous")
                 }else{
-                    let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainInitTabBarVC") as! UITabBarController
-                    nextVC.modalPresentationStyle = .fullScreen
-                    self.present(nextVC, animated: true, completion: nil)
+                    UserDefaults.standard.setValue(Date(), forKey: "lastLoginDate")
+                    Tools.showIndicator(inController: self)
+                    if let email = auth.currentUser?.email{
+                        let encodeEmail = email.replacingOccurrences(of: ".", with: "@@")
+                        self.ref.child("userE/\(encodeEmail)").observeSingleEvent(of: .value) { snapshot in
+                            let account = snapshot.value as! String
+                            self.ref.child("users/\(account)").observeSingleEvent(of: .value) { userSnapshot in
+                                let birthday = userSnapshot.childSnapshot(forPath: "birth").value as! String
+                                let deActive = userSnapshot.childSnapshot(forPath: "deat").value as! Bool
+                                let introducer = userSnapshot.childSnapshot(forPath: "intor").value as! String
+                                let level = userSnapshot.childSnapshot(forPath: "level").value as! Int
+                                let lineAccount = userSnapshot.childSnapshot(forPath: "line").value as! String
+                                let name = userSnapshot.childSnapshot(forPath: "name").value as! String
+                                let phone = userSnapshot.key
+                                let currentUser = ["birth":birthday,
+                                                   "deat":deActive,
+                                                   "email":email,
+                                                   "intor":introducer,
+                                                   "level":level,
+                                                   "line":lineAccount,
+                                                   "phone":phone,
+                                                   "name":name] as [String : Any]
+                                UserDefaults.standard.setValue(currentUser, forKey: "currentUser")
+                                UserDefaults.standard.synchronize()
+                                let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainInitTabBarVC") as! UITabBarController
+                                nextVC.modalPresentationStyle = .fullScreen
+                                Tools.removeIndicator(inController: self)
+                                self.present(nextVC, animated: true, completion: nil)
+                            }
+                        }
+                    }
                 }
             }else{
                 //登出時，回到登入頁

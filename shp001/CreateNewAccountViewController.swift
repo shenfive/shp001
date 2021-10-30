@@ -147,7 +147,7 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
                                                 "deat":false,
                                                 "email":email,
                                                 "intor":self.selectedIntroduer ?? "no",
-                                                "lavel":level,
+                                                "level":level,
                                                 "line":lineAccount,
                                                 "name":displayName] as [String : Any]
                                     self.ref.child("users/\(phone)").setValue(item)

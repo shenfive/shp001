@@ -11,7 +11,12 @@ import UIKit
 class Tools {
     
 
-    
+    static func currentSevedUser()->[String:Any]{
+        if let savedUser = UserDefaults.standard.value(forKey: "currentUser") as? [String:Any]{
+            return savedUser
+        }
+        return [:]
+    }
     
     
     //加入
