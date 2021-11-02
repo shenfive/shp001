@@ -17,6 +17,7 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var liginTimeLabel: UILabel!
     
+    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
     
     @IBOutlet weak var changePasswordButton: UIButton!
@@ -33,6 +34,12 @@ class AccountViewController: UIViewController {
         ref = Database.database().reference()
         auth = FirebaseAuth.Auth.auth()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        
         userInfoContainer.clipsToBounds = false
         userInfoContainer.layer.shadowRadius = 20         //陰影
         userInfoContainer.layer.shadowOpacity = 0.6;
@@ -47,15 +54,12 @@ class AccountViewController: UIViewController {
         createButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         accountListButton.layer.cornerRadius = 20
         accountListButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+
+        
         
         let userInfo = Tools.currentSevedUser()
         if let name = userInfo["name"] as? String{
-            helloLabel.text = " 歡迎 : \(name) "
+            helloLabel.text = " 您好    \(name)  先生/女士"
             phoneLabel.text = "手機號碼 : \(userInfo["phone"] as! String)"
             emailLabel.text = "E-Mail : \(userInfo["email"] as! String)"
             let loginDate = UserDefaults.standard.value(forKey: "lastLoginDate") as! Date
@@ -63,6 +67,20 @@ class AccountViewController: UIViewController {
             formater.dateFormat = "MM/dd HH:mm:ss"
             let string = formater.string(from: loginDate)
             liginTimeLabel.text = "登入時間 : \(string)"
+            print(userInfo["level"] as! Int)
+
+            switch userInfo["level"] as! Int{
+            case 1:
+                levelLabel.text = "帳號層級:管理者"
+            case 2:
+                levelLabel.text = "帳號層級:員工"
+            case 3:
+                levelLabel.text = "帳號層級:一般會員"
+            case 4:
+                levelLabel.text = "帳號層級:經銷商會員"
+            default:
+                levelLabel.text = "帳號層級:不明"
+            }
         }
         
         

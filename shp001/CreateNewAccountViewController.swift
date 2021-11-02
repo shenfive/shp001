@@ -57,11 +57,9 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
             self.selectedIntroduer = $0
             self.introLabel.text = "\($1)    \($0)"
             nextVC.dismiss(animated: true) {
-                
             }
         }
         present(nextVC, animated: true) {
-            
         }
     }
     
@@ -77,12 +75,7 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
         let level = memberLevelPicker.selectedRow(inComponent: 0)
         let lineAccount = lineAccountTextField.text ?? ""
         let birthday = birthdatDatePicker.date
-        
-        print(birthday.timeIntervalSince1970)
-        
-        
-    
-        
+
         if displayName.count < 2{
             showAlert("請輸入姓名，至少兩個字元")
             return
@@ -176,11 +169,5 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
                 }
             }
         }
-        
-        
-        
-        
     }
-    
-    
 }
