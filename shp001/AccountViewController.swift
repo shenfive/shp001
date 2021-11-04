@@ -34,29 +34,6 @@ class AccountViewController: UIViewController {
         ref = Database.database().reference()
         auth = FirebaseAuth.Auth.auth()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
-        
-        userInfoContainer.clipsToBounds = false
-        userInfoContainer.layer.shadowRadius = 20         //陰影
-        userInfoContainer.layer.shadowOpacity = 0.6;
-        userInfoContainer.layer.shadowColor = UIColor.gray.cgColor
-        userInfoContainer.layer.shadowOffset = CGSize(width: 10, height: 10)
-
-        logoutButton.layer.cornerRadius = 20
-        logoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        changePasswordButton.layer.cornerRadius = 20
-        changePasswordButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        createButton.layer.cornerRadius = 20
-        createButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        accountListButton.layer.cornerRadius = 20
-        accountListButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-
-        
-        
         let userInfo = Tools.currentSevedUser()
         if let name = userInfo["name"] as? String{
             helloLabel.text = " 您好    \(name)  先生/女士"
@@ -83,8 +60,38 @@ class AccountViewController: UIViewController {
             }
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        
+        userInfoContainer.clipsToBounds = false
+        userInfoContainer.layer.shadowRadius = 20         //陰影
+        userInfoContainer.layer.shadowOpacity = 0.6;
+        userInfoContainer.layer.shadowColor = UIColor.gray.cgColor
+        userInfoContainer.layer.shadowOffset = CGSize(width: 10, height: 10)
+
+        logoutButton.layer.cornerRadius = 20
+//        logoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        
+        changePasswordButton.layer.cornerRadius = 20
+//        changePasswordButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        createButton.layer.cornerRadius = 20
+//        createButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        accountListButton.layer.cornerRadius = 20
+//        accountListButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+ 
+        
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+
+    }
+    
 
     @IBAction func signOut(_ sender: Any) {
         

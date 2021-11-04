@@ -159,3 +159,19 @@ func validateEmail(_ str:String)->Bool{
 }
 
 
+struct Order{
+    var time = Date()
+    var poNumber = ""
+    var sales = ""
+    var productName = ""
+    var productNumber = ""
+    var qry = 0
+    var uniprice = 0
+    var disconuntRate = 0.0
+    var payMent = ""
+    var total:Int  {
+        get {
+            return Int(Double( qry * uniprice ) * disconuntRate)
+        }
+    }
+}

@@ -205,7 +205,8 @@ class NewOrderViewController: UIViewController,UIPickerViewDelegate,UIPickerView
             
             
             let order = ["time":Int(orderDate.timeIntervalSince1970 * 1000),
-                         "sales":self.selectedSales ?? "",
+                         "poNumber":poNumber,
+                         "sales":self.salesLabel.text ?? "",
                          "pname":productName,
                          "pnum":procuctNumber,
                          "qry":theQuantity,
