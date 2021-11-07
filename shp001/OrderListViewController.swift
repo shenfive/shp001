@@ -124,6 +124,12 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
         cell.ponumber.text = "訂單編號: \(theOrder.poNumber)"
         cell.salesName.text = "業務員: \(theOrder.sales)"
         cell.productName.text = "產品名稱: \(theOrder.productName)"
+        cell.detailAction = {
+            let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pODetailViewController") as! PODetailViewController
+            nextVC.modalPresentationStyle = .overCurrentContext
+            nextVC.theOrder = theOrder
+            self.present(nextVC, animated: true, completion: nil)
+        }
         
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 0

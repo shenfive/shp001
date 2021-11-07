@@ -22,7 +22,7 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var lineAccountTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
-    var memberLevelArray = ["請上滑選擇","管理者","員工","一般會員","經銷商會員"]
+    let memberLevelArray = ["請上滑選擇","管理者","員工","一般會員","經銷商會員"]
     var ref:DatabaseReference!
     var selectedIntroduer:String? = nil
     

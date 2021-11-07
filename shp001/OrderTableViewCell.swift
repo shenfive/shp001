@@ -16,6 +16,8 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var total: UILabel!
     @IBOutlet weak var detailButton: UIButton!
     
+    var detailAction:(()->())? = nil
+    
  
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +26,7 @@ class OrderTableViewCell: UITableViewCell {
     }
     
     @IBAction func detailAction(_ sender: Any) {
+        detailAction?()
     }
     
 }

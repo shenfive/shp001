@@ -30,6 +30,10 @@
 		BAC3F64E27285DB3003AD926 /* CopyRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F64D27285DB3003AD926 /* CopyRightViewController.swift */; };
 		BAC3F65027298196003AD926 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAC3F64F27298196003AD926 /* GoogleService-Info.plist */; };
 		BAC3F65227298FBB003AD926 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC3F65127298FBB003AD926 /* AccountViewController.swift */; };
+		BAD45EC12737E9CF0097D8E9 /* AccountManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD45EC02737E9CF0097D8E9 /* AccountManagerViewController.swift */; };
+		BAD45EC32737ED6F0097D8E9 /* AccountManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD45EC22737ED6F0097D8E9 /* AccountManageTableViewCell.swift */; };
+		BAD45EC52738276B0097D8E9 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD45EC42738276B0097D8E9 /* UserDetailViewController.swift */; };
+		BAD45EC7273849590097D8E9 /* PODetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD45EC6273849590097D8E9 /* PODetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		BAC3F64D27285DB3003AD926 /* CopyRightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyRightViewController.swift; sourceTree = "<group>"; };
 		BAC3F64F27298196003AD926 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAC3F65127298FBB003AD926 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		BAD45EC02737E9CF0097D8E9 /* AccountManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerViewController.swift; sourceTree = "<group>"; };
+		BAD45EC22737ED6F0097D8E9 /* AccountManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManageTableViewCell.swift; sourceTree = "<group>"; };
+		BAD45EC42738276B0097D8E9 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		BAD45EC6273849590097D8E9 /* PODetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODetailViewController.swift; sourceTree = "<group>"; };
 		EE46B511CFD9994D9760101E /* Pods-shp001.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shp001.release.xcconfig"; path = "Target Support Files/Pods-shp001/Pods-shp001.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +126,10 @@
 				BA682815272D95D0003FB983 /* NewOrderViewController.swift */,
 				BA299994273414E600D4E5C2 /* OrderListViewController.swift */,
 				BA2999962734281500D4E5C2 /* OrderTableViewCell.swift */,
+				BAD45EC02737E9CF0097D8E9 /* AccountManagerViewController.swift */,
+				BAD45EC22737ED6F0097D8E9 /* AccountManageTableViewCell.swift */,
+				BAD45EC42738276B0097D8E9 /* UserDetailViewController.swift */,
+				BAD45EC6273849590097D8E9 /* PODetailViewController.swift */,
 			);
 			path = shp001;
 			sourceTree = "<group>";
@@ -257,10 +269,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC3F6322728207E003AD926 /* ViewController.swift in Sources */,
+				BAD45EC32737ED6F0097D8E9 /* AccountManageTableViewCell.swift in Sources */,
 				BAC3F62E2728207E003AD926 /* AppDelegate.swift in Sources */,
 				BA1A1DF5272AF8F500FDD1A9 /* ForgetPasswordViewController.swift in Sources */,
 				BA2999972734281500D4E5C2 /* OrderTableViewCell.swift in Sources */,
 				BAC3F65227298FBB003AD926 /* AccountViewController.swift in Sources */,
+				BAD45EC52738276B0097D8E9 /* UserDetailViewController.swift in Sources */,
 				BA1A1DF3272AC91C00FDD1A9 /* ChangePasswordViewController.swift in Sources */,
 				BA682814272D937D003FB983 /* OrderFormViewController.swift in Sources */,
 				BAC3F64E27285DB3003AD926 /* CopyRightViewController.swift in Sources */,
@@ -268,8 +282,10 @@
 				BAC3F6302728207E003AD926 /* SceneDelegate.swift in Sources */,
 				BA682816272D95D0003FB983 /* NewOrderViewController.swift in Sources */,
 				BAC3F64627284A83003AD926 /* Tools.swift in Sources */,
+				BAD45EC7273849590097D8E9 /* PODetailViewController.swift in Sources */,
 				BAC3F64A27284B20003AD926 /* ToastMessageView.swift in Sources */,
 				BA1A1DF7272B07FE00FDD1A9 /* CreateNewAccountViewController.swift in Sources */,
+				BAD45EC12737E9CF0097D8E9 /* AccountManagerViewController.swift in Sources */,
 				BAB2F52C272C254700C3C78E /* IntroducerPickerViewController.swift in Sources */,
 				BAB2F52E272C386000C3C78E /* IntroTableViewCell.swift in Sources */,
 				BA299995273414E600D4E5C2 /* OrderListViewController.swift in Sources */,
