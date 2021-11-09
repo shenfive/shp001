@@ -109,16 +109,12 @@ class EditOrderViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         default :
             break
         }
-        
-        
     }
     
     func calTotalPrice(){
         if let qty = Double(quantity.text ?? ""){
             if let uniPrice = Double(uniPrice.text ?? ""){
                 let price = qty * uniPrice * disCountRate
-          
-
                 let formatter = NumberFormatter()
                 formatter.maximumFractionDigits = 0
                 formatter.numberStyle = .currency
@@ -127,6 +123,10 @@ class EditOrderViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             }
         }
     }
+    
+    
+    
+    
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

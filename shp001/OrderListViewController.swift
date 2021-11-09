@@ -21,6 +21,7 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
     var ref:DatabaseReference!
     var selectedMonth = ""
     var orders:[Order] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,6 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
                         theOrder.disconuntRate = snapshotitem.childSnapshot(forPath: "drate").value as! Double
                         theOrder.payMent = snapshotitem.childSnapshot(forPath: "pay").value as! String
                         theOrder.isFirstOrder = snapshotitem.childSnapshot(forPath: "isFirstPO").value as! Bool
-                        
                         self.orders.append(theOrder)
                         thisMonthTotal += theOrder.totalPrice
                         
@@ -113,7 +113,6 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
         reflashData()
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return orders.count
     }
@@ -133,6 +132,7 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
             let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pODetailViewController") as! PODetailViewController
             nextVC.modalPresentationStyle = .overCurrentContext
             nextVC.theOrder = theOrder
+            nextVC.alloweEdit = true
             nextVC.editAction = {
                 let editVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "editOrderViewController") as! EditOrderViewController
                 editVC.theOrder = theOrder
@@ -149,8 +149,6 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
         formatter.maximumFractionDigits = 0
         formatter.numberStyle = .currency
         let priceString = formatter.string(from: NSNumber(value: theOrder.totalPrice)) ?? ""
-        
-        
         cell.total.text = "總額:\(priceString)"
         return cell
     }

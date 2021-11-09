@@ -2067,28 +2067,249 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw8-cs-6sI">
+                                <rect key="frame" x="20" y="90" width="100" height="67"/>
+                                <color key="backgroundColor" name="shp-button-purple"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="Tgh-Pb-o0T"/>
+                                    <constraint firstAttribute="width" constant="100" id="kQT-4D-CKX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="&lt; 前月">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextMonth:" destination="4V6-Zi-7Mt" eventType="touchUpInside" id="hUq-6L-eXY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdU-Ct-Gyk">
+                                <rect key="frame" x="140" y="90" width="100" height="67"/>
+                                <color key="backgroundColor" name="shp-button-green"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EKC-gR-5pe"/>
+                                    <constraint firstAttribute="height" constant="67" id="etb-tJ-UTI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="後月&gt;">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="lastMonth:" destination="4V6-Zi-7Mt" eventType="touchUpInside" id="ACe-zq-WT2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1u-4G-w7b">
+                                <rect key="frame" x="260" y="90" width="100" height="67"/>
+                                <color key="backgroundColor" name="shp-button-blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="lsw-F3-SQY"/>
+                                    <constraint firstAttribute="width" constant="100" id="nAD-On-F69"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="依訂單">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="byOrderAction:" destination="4V6-Zi-7Mt" eventType="touchUpInside" id="mg9-52-QXb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3L-7a-p8E">
+                                <rect key="frame" x="380" y="90" width="100" height="67"/>
+                                <color key="backgroundColor" name="shp-button-orange"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="sLr-0Q-zO4"/>
+                                    <constraint firstAttribute="height" constant="67" id="y1c-69-lXK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="依會員">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="byMemberAction:" destination="4V6-Zi-7Mt" eventType="touchUpInside" id="QV1-8M-4xs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja8-lz-Y2l">
+                                <rect key="frame" x="686" y="90" width="52" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="awp-fq-oAH">
-                                <rect key="frame" x="0.0" y="114" width="768" height="860"/>
+                                <rect key="frame" x="0.0" y="170" width="768" height="804"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bonusByOrderTableViewCell" id="COZ-ev-76x" customClass="BonusByOrderTableViewCell" customModule="shp001" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="768" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="COZ-ev-76x" id="Jh9-KQ-kCE">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0R-jY-6Gv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="100"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="訂單編號" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77P-pI-qal">
+                                                    <rect key="frame" x="20" y="10" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一階介紹人奬金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBA-qh-cvb">
+                                                    <rect key="frame" x="20" y="39" width="122" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="二階介紹人奬金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9X-Sb-dly">
+                                                    <rect key="frame" x="20" y="69" width="122" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4Y-0y-JGG">
+                                                    <rect key="frame" x="658" y="15" width="70" height="70"/>
+                                                    <color key="backgroundColor" name="shp-button-blue"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="GPs-SE-ecL"/>
+                                                        <constraint firstAttribute="height" constant="70" id="sxv-5F-sO3"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="訂單詳情">
+                                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="detailAction:" destination="COZ-ev-76x" eventType="touchUpInside" id="q7h-ZW-VTp"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="業務" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWL-Ny-BLG">
+                                                    <rect key="frame" x="404" y="39" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總金額" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHW-gT-Sa0">
+                                                    <rect key="frame" x="404" y="68" width="52" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMO-IC-g2u">
+                                                    <rect key="frame" x="404" y="10" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kHW-gT-Sa0" firstAttribute="leading" secondItem="XMO-IC-g2u" secondAttribute="leading" id="4yY-u7-0am"/>
+                                                <constraint firstItem="WWL-Ny-BLG" firstAttribute="leading" secondItem="XMO-IC-g2u" secondAttribute="leading" id="5RK-Jv-Wwm"/>
+                                                <constraint firstItem="K4Y-0y-JGG" firstAttribute="centerY" secondItem="Jh9-KQ-kCE" secondAttribute="centerY" id="6BG-VD-qqv"/>
+                                                <constraint firstAttribute="trailing" secondItem="K4Y-0y-JGG" secondAttribute="trailing" constant="40" id="9uz-vE-ZNS"/>
+                                                <constraint firstItem="mBA-qh-cvb" firstAttribute="leading" secondItem="77P-pI-qal" secondAttribute="leading" id="AjO-ap-xgu"/>
+                                                <constraint firstAttribute="bottom" secondItem="kHW-gT-Sa0" secondAttribute="bottom" constant="10.5" id="B5I-4m-BXA"/>
+                                                <constraint firstItem="P9X-Sb-dly" firstAttribute="top" secondItem="mBA-qh-cvb" secondAttribute="bottom" constant="8" id="BMR-Rk-KS8"/>
+                                                <constraint firstItem="T0R-jY-6Gv" firstAttribute="leading" secondItem="Jh9-KQ-kCE" secondAttribute="leading" id="LfN-n2-whv"/>
+                                                <constraint firstAttribute="bottom" secondItem="P9X-Sb-dly" secondAttribute="bottom" constant="10" id="UB2-d4-5rg"/>
+                                                <constraint firstItem="77P-pI-qal" firstAttribute="top" secondItem="Jh9-KQ-kCE" secondAttribute="top" constant="10" id="Wxf-4v-uLp"/>
+                                                <constraint firstItem="77P-pI-qal" firstAttribute="leading" secondItem="Jh9-KQ-kCE" secondAttribute="leading" constant="20" id="bxZ-gi-LPi"/>
+                                                <constraint firstItem="WWL-Ny-BLG" firstAttribute="top" secondItem="XMO-IC-g2u" secondAttribute="bottom" constant="8" id="ciV-Mh-JAx"/>
+                                                <constraint firstItem="mBA-qh-cvb" firstAttribute="top" secondItem="77P-pI-qal" secondAttribute="bottom" constant="8" id="dSG-9q-yON"/>
+                                                <constraint firstItem="T0R-jY-6Gv" firstAttribute="width" secondItem="Jh9-KQ-kCE" secondAttribute="width" multiplier="0.5" id="mJC-kX-Nrd"/>
+                                                <constraint firstItem="XMO-IC-g2u" firstAttribute="top" secondItem="Jh9-KQ-kCE" secondAttribute="top" constant="10" id="ojM-dr-lkl"/>
+                                                <constraint firstItem="P9X-Sb-dly" firstAttribute="leading" secondItem="77P-pI-qal" secondAttribute="leading" id="s9D-EB-H58"/>
+                                                <constraint firstItem="T0R-jY-6Gv" firstAttribute="top" secondItem="Jh9-KQ-kCE" secondAttribute="top" id="smA-QU-f7l"/>
+                                                <constraint firstItem="XMO-IC-g2u" firstAttribute="leading" secondItem="T0R-jY-6Gv" secondAttribute="trailing" constant="20" id="v2H-xb-kY7"/>
+                                                <constraint firstAttribute="bottom" secondItem="T0R-jY-6Gv" secondAttribute="bottom" id="y9b-OO-Aqv"/>
+                                                <constraint firstItem="kHW-gT-Sa0" firstAttribute="top" secondItem="WWL-Ny-BLG" secondAttribute="bottom" constant="8" id="yLg-hU-5qq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commission1" destination="mBA-qh-cvb" id="T9l-Wx-yNc"/>
+                                            <outlet property="commission2" destination="P9X-Sb-dly" id="zAH-Zf-StD"/>
+                                            <outlet property="detailButton" destination="K4Y-0y-JGG" id="QRg-ec-wYg"/>
+                                            <outlet property="orderDate" destination="XMO-IC-g2u" id="gbf-JS-J9W"/>
+                                            <outlet property="poNumber" destination="77P-pI-qal" id="xfR-D2-ZwK"/>
+                                            <outlet property="sales" destination="WWL-Ny-BLG" id="PeG-eq-upx"/>
+                                            <outlet property="total" destination="kHW-gT-Sa0" id="F20-gg-8qH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bonusByMemberTableViewCell" id="quq-VV-aI8" customClass="BonusByMemberTableViewCell" customModule="shp001" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="144.5" width="768" height="96.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="quq-VV-aI8" id="f2i-3r-cVu">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="96.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="會員編號" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7e-bb-R4g">
+                                                    <rect key="frame" x="30" y="20" width="82" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="會員姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye2-7T-mc1">
+                                                    <rect key="frame" x="30" y="52" width="82" height="24.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月奬金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7z-Sg-Arb">
+                                                    <rect key="frame" x="630" y="47.5" width="98" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ye2-7T-mc1" firstAttribute="leading" secondItem="d7e-bb-R4g" secondAttribute="leading" id="5Qf-Up-aII"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ye2-7T-mc1" secondAttribute="bottom" constant="20" id="Db1-zN-ktk"/>
+                                                <constraint firstAttribute="trailing" secondItem="d7z-Sg-Arb" secondAttribute="trailing" constant="40" id="YYl-4N-yvI"/>
+                                                <constraint firstItem="d7e-bb-R4g" firstAttribute="leading" secondItem="f2i-3r-cVu" secondAttribute="leading" constant="30" id="efo-hT-IHA"/>
+                                                <constraint firstItem="d7e-bb-R4g" firstAttribute="top" secondItem="f2i-3r-cVu" secondAttribute="top" constant="20" id="mB1-v3-32d"/>
+                                                <constraint firstAttribute="bottom" secondItem="d7z-Sg-Arb" secondAttribute="bottom" constant="20" id="yLJ-Gk-cit"/>
+                                                <constraint firstItem="Ye2-7T-mc1" firstAttribute="top" secondItem="d7e-bb-R4g" secondAttribute="bottom" constant="8" id="yMo-AV-1d7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commissionThisMonth" destination="d7z-Sg-Arb" id="hdy-Re-DDY"/>
+                                            <outlet property="memberID" destination="d7e-bb-R4g" id="x83-4G-Cjx"/>
+                                            <outlet property="memberName" destination="Ye2-7T-mc1" id="6yK-6q-HyA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O8w-Yi-mYJ"/>
                         <color key="backgroundColor" name="shp-purpleBackGround"/>
                         <constraints>
                             <constraint firstItem="O8w-Yi-mYJ" firstAttribute="trailing" secondItem="awp-fq-oAH" secondAttribute="trailing" id="2qp-HG-ngV"/>
-                            <constraint firstItem="awp-fq-oAH" firstAttribute="top" secondItem="O8w-Yi-mYJ" secondAttribute="top" constant="44" id="84c-Ky-OvF"/>
+                            <constraint firstItem="m3L-7a-p8E" firstAttribute="leading" secondItem="D1u-4G-w7b" secondAttribute="trailing" constant="20" id="75g-vs-Tz8"/>
+                            <constraint firstItem="awp-fq-oAH" firstAttribute="top" secondItem="O8w-Yi-mYJ" secondAttribute="top" constant="100" id="84c-Ky-OvF"/>
+                            <constraint firstItem="D1u-4G-w7b" firstAttribute="leading" secondItem="tdU-Ct-Gyk" secondAttribute="trailing" constant="20" id="DKF-sI-dkB"/>
                             <constraint firstItem="awp-fq-oAH" firstAttribute="leading" secondItem="O8w-Yi-mYJ" secondAttribute="leading" id="MZG-qz-TfY"/>
+                            <constraint firstItem="Aw8-cs-6sI" firstAttribute="leading" secondItem="O8w-Yi-mYJ" secondAttribute="leading" constant="20" id="Ou4-ot-cOc"/>
+                            <constraint firstItem="tdU-Ct-Gyk" firstAttribute="top" secondItem="Aw8-cs-6sI" secondAttribute="top" id="RI9-OF-RT3"/>
+                            <constraint firstItem="m3L-7a-p8E" firstAttribute="top" secondItem="O8w-Yi-mYJ" secondAttribute="top" constant="20" id="UqV-gf-CuZ"/>
+                            <constraint firstItem="Ja8-lz-Y2l" firstAttribute="top" secondItem="O8w-Yi-mYJ" secondAttribute="top" constant="20" id="ehj-W3-pJB"/>
+                            <constraint firstItem="Aw8-cs-6sI" firstAttribute="top" secondItem="O8w-Yi-mYJ" secondAttribute="top" constant="20" id="ftG-cG-RYs"/>
                             <constraint firstItem="O8w-Yi-mYJ" firstAttribute="bottom" secondItem="awp-fq-oAH" secondAttribute="bottom" id="hT4-RY-61g"/>
+                            <constraint firstItem="D1u-4G-w7b" firstAttribute="top" secondItem="m3L-7a-p8E" secondAttribute="top" id="hr5-oX-tbZ"/>
+                            <constraint firstItem="tdU-Ct-Gyk" firstAttribute="leading" secondItem="Aw8-cs-6sI" secondAttribute="trailing" constant="20" id="liP-qd-OVl"/>
+                            <constraint firstItem="O8w-Yi-mYJ" firstAttribute="trailing" secondItem="Ja8-lz-Y2l" secondAttribute="trailing" constant="30" id="xDX-6S-F8Y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gMq-RS-hk6"/>
                     <connections>
+                        <outlet property="byMemberButton" destination="m3L-7a-p8E" id="B50-bo-77n"/>
+                        <outlet property="byOrderButton" destination="D1u-4G-w7b" id="gnZ-uO-HBf"/>
+                        <outlet property="dateInfoLabel" destination="Ja8-lz-Y2l" id="x1f-ON-GH2"/>
+                        <outlet property="lastMonthButton" destination="Aw8-cs-6sI" id="RF7-JR-CuE"/>
+                        <outlet property="nextMonthButton" destination="tdU-Ct-Gyk" id="kb3-0S-fdK"/>
                         <outlet property="theTableView" destination="awp-fq-oAH" id="efw-h2-KAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkT-vy-giJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3052" y="2668"/>
+            <point key="canvasLocation" x="3051.5625" y="2667.7734375"/>
         </scene>
         <!--Edit Order View Controller-->
         <scene sceneID="Ly2-hG-in8">
@@ -2376,7 +2597,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="copyright" width="128" height="128"/>
+        <image name="copyright" width="32" height="32"/>
         <image name="logo" width="277" height="86.5"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="square.and.arrow.up.circle" catalog="system" width="128" height="121"/>
@@ -2386,6 +2607,9 @@
         </namedColor>
         <namedColor name="shp-button-green">
             <color red="0.25499999523162842" green="0.77999997138977051" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="shp-button-orange">
+            <color red="1" green="0.58399999141693115" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="shp-button-purple">
             <color red="0.68599998950958252" green="0.32199999690055847" blue="0.87099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2397,7 +2621,7 @@
             <color red="1" green="0.88599997758865356" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="shp-purpleBackGround">
-            <color red="1" green="0.76905024280741296" blue="0.98990584430797879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.76899999380111694" blue="0.99000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

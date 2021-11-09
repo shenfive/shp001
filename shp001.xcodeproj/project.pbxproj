@@ -13,6 +13,8 @@
 		BA1A1DF7272B07FE00FDD1A9 /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A1DF6272B07FE00FDD1A9 /* CreateNewAccountViewController.swift */; };
 		BA299995273414E600D4E5C2 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA299994273414E600D4E5C2 /* OrderListViewController.swift */; };
 		BA2999972734281500D4E5C2 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2999962734281500D4E5C2 /* OrderTableViewCell.swift */; };
+		BA37F2BD273A421000213BF4 /* BonusByOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA37F2BC273A421000213BF4 /* BonusByOrderTableViewCell.swift */; };
+		BA37F2BF273A422200213BF4 /* BonusByMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA37F2BE273A422200213BF4 /* BonusByMemberTableViewCell.swift */; };
 		BA4C2E7827390CD600AC3EB8 /* EditOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C2E7727390CD600AC3EB8 /* EditOrderViewController.swift */; };
 		BA4C2E7A27397C3800AC3EB8 /* BonusCalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C2E7927397C3800AC3EB8 /* BonusCalViewController.swift */; };
 		BA4C2E7C27397D7900AC3EB8 /* BonusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C2E7B27397D7900AC3EB8 /* BonusListViewController.swift */; };
@@ -47,6 +49,8 @@
 		BA1A1DF6272B07FE00FDD1A9 /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
 		BA299994273414E600D4E5C2 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		BA2999962734281500D4E5C2 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		BA37F2BC273A421000213BF4 /* BonusByOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusByOrderTableViewCell.swift; sourceTree = "<group>"; };
+		BA37F2BE273A422200213BF4 /* BonusByMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusByMemberTableViewCell.swift; sourceTree = "<group>"; };
 		BA4C2E7727390CD600AC3EB8 /* EditOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOrderViewController.swift; sourceTree = "<group>"; };
 		BA4C2E7927397C3800AC3EB8 /* BonusCalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusCalViewController.swift; sourceTree = "<group>"; };
 		BA4C2E7B27397D7900AC3EB8 /* BonusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusListViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				BA4C2E7727390CD600AC3EB8 /* EditOrderViewController.swift */,
 				BA4C2E7927397C3800AC3EB8 /* BonusCalViewController.swift */,
 				BA4C2E7B27397D7900AC3EB8 /* BonusListViewController.swift */,
+				BA37F2BC273A421000213BF4 /* BonusByOrderTableViewCell.swift */,
+				BA37F2BE273A422200213BF4 /* BonusByMemberTableViewCell.swift */,
 			);
 			path = shp001;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				BAC3F65227298FBB003AD926 /* AccountViewController.swift in Sources */,
 				BAD45EC52738276B0097D8E9 /* UserDetailViewController.swift in Sources */,
 				BA1A1DF3272AC91C00FDD1A9 /* ChangePasswordViewController.swift in Sources */,
+				BA37F2BD273A421000213BF4 /* BonusByOrderTableViewCell.swift in Sources */,
 				BA682814272D937D003FB983 /* OrderFormViewController.swift in Sources */,
 				BA4C2E7C27397D7900AC3EB8 /* BonusListViewController.swift in Sources */,
 				BAC3F64E27285DB3003AD926 /* CopyRightViewController.swift in Sources */,
@@ -300,6 +307,7 @@
 				BAD45EC12737E9CF0097D8E9 /* AccountManagerViewController.swift in Sources */,
 				BAB2F52C272C254700C3C78E /* IntroducerPickerViewController.swift in Sources */,
 				BAB2F52E272C386000C3C78E /* IntroTableViewCell.swift in Sources */,
+				BA37F2BF273A422200213BF4 /* BonusByMemberTableViewCell.swift in Sources */,
 				BA299995273414E600D4E5C2 /* OrderListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

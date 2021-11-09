@@ -30,7 +30,7 @@ class PODetailViewController: UIViewController {
     var ref:DatabaseReference!
     var theOrder:Order = Order()
     var editAction:(()->())? = nil
-
+    var alloweEdit = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,11 @@ class PODetailViewController: UIViewController {
         formatter.numberStyle = .currency
         let priceString = formatter.string(from: NSNumber(value: price)) ?? ""
         total.text = " 訂單總額: \(priceString)"
+        if alloweEdit == true{
+            editButton.isHidden = false
+        }else{
+            editButton.isHidden = true
+        }
 
     }
     
