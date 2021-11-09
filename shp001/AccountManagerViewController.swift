@@ -52,7 +52,7 @@ class AccountManagerViewController: UIViewController, UITableViewDelegate, UITab
     func updateUsers(){
         Tools.showIndicator(inController: self)
         userS.removeAll()
-        ref = Database.database().reference()
+        
         ref.child("users").observeSingleEvent(of: .value) { datasnap in
             for item in datasnap.children{
                 let userSnapshot = item as! DataSnapshot
@@ -72,13 +72,10 @@ class AccountManagerViewController: UIViewController, UITableViewDelegate, UITab
                                    "line":lineAccount,
                                    "phone":phone,
                                    "name":name] as [String : Any]
-                
                 self.userS.append(currentUser)
             }
             self.setSelectedMembers()
         }
-        
-        
     }
     
     func setSelectedMembers(){

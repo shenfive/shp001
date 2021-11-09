@@ -52,10 +52,10 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
                     
                     if let snapshotitem = item as? DataSnapshot{
 
-                        let time = Date(timeIntervalSince1970:(snapshotitem.childSnapshot(forPath: "time").value as! Double) / 100 )
+                        let time = Date(timeIntervalSince1970:(snapshotitem.childSnapshot(forPath: "time").value as! Double) / 1000 )
                         
                         var theOrder = Order()
-                        
+                        theOrder.key = snapshotitem.key
                         theOrder.time = time
                         theOrder.poNumber = snapshotitem.childSnapshot(forPath: "poNumber").value as! String
                         theOrder.sales = snapshotitem.childSnapshot(forPath: "sales").value as! String
@@ -65,9 +65,10 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
                         theOrder.uniprice = snapshotitem.childSnapshot(forPath: "upi").value as! Int
                         theOrder.disconuntRate = snapshotitem.childSnapshot(forPath: "drate").value as! Double
                         theOrder.payMent = snapshotitem.childSnapshot(forPath: "pay").value as! String
+                        theOrder.isFirstOrder = snapshotitem.childSnapshot(forPath: "isFirstPO").value as! Bool
                         
                         self.orders.append(theOrder)
-                        thisMonthTotal += theOrder.total
+                        thisMonthTotal += theOrder.totalPrice
                         
                     }
                 }
@@ -124,17 +125,30 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
         cell.ponumber.text = "訂單編號: \(theOrder.poNumber)"
         cell.salesName.text = "業務員: \(theOrder.sales)"
         cell.productName.text = "產品名稱: \(theOrder.productName)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm"
+        let dateString = dateFormatter.string(from: theOrder.time)
+        cell.orderDate.text =  "日期: \(dateString)"
         cell.detailAction = {
             let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pODetailViewController") as! PODetailViewController
             nextVC.modalPresentationStyle = .overCurrentContext
             nextVC.theOrder = theOrder
+            nextVC.editAction = {
+                let editVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "editOrderViewController") as! EditOrderViewController
+                editVC.theOrder = theOrder
+                editVC.modalPresentationStyle = .overCurrentContext
+                editVC.reflasuhAction = {
+                    self.reflashData()
+                }
+                self.present(editVC, animated: true, completion: nil)
+            }
             self.present(nextVC, animated: true, completion: nil)
         }
         
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 0
         formatter.numberStyle = .currency
-        let priceString = formatter.string(from: NSNumber(value: theOrder.total)) ?? ""
+        let priceString = formatter.string(from: NSNumber(value: theOrder.totalPrice)) ?? ""
         
         
         cell.total.text = "總額:\(priceString)"

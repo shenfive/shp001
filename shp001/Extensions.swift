@@ -160,8 +160,10 @@ func validateEmail(_ str:String)->Bool{
 
 
 struct Order{
+    var key = ""
     var time = Date()
     var poNumber = ""
+    var isFirstOrder = false
     var sales = ""
     var productName = ""
     var productNumber = ""
@@ -169,9 +171,13 @@ struct Order{
     var uniprice = 0
     var disconuntRate = 0.0
     var payMent = ""
-    var total:Int  {
+    var totalPrice:Int  {
         get {
             return Int(Double( qry * uniprice ) * disconuntRate)
         }
     }
+    var intorL1 = ""
+    var intorL1Commission = 0.0
+    var intorL2 = ""
+    var intorL2Commission = 0.0
 }

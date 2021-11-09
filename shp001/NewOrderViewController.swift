@@ -23,6 +23,7 @@ class NewOrderViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var remarkTextField: UITextField!
+    @IBOutlet weak var isFirstOrder: UISegmentedControl!
     
     var disCountRate = 1.0
     
@@ -97,7 +98,6 @@ class NewOrderViewController: UIViewController,UIPickerViewDelegate,UIPickerView
     }
     
     func setDisconutRate(){
-        
         switch discountPickerView.selectedRow(inComponent: 0){
         case 0:
             disCountRate = 1.0
@@ -207,13 +207,13 @@ class NewOrderViewController: UIViewController,UIPickerViewDelegate,UIPickerView
             let order = ["time":Int(orderDate.timeIntervalSince1970 * 1000),
                          "poNumber":poNumber,
                          "sales":self.salesLabel.text ?? "",
+                         "isFirstPO":self.isFirstOrder.selectedSegmentIndex == 0 ? true:false,
                          "pname":productName,
                          "pnum":procuctNumber,
                          "qry":theQuantity,
                          "upi":theUniPrice,
                          "drate":self.disCountRate,
-                         "pay":self.paymentArray[self.paymentPickerView.selectedRow(inComponent: 0)],
-                         "rm":remark] as [String:Any]
+                         "pay":self.paymentArray[self.paymentPickerView.selectedRow(inComponent: 0)]] as [String:Any]
             self.ref.child("order/\(categoryString)").childByAutoId().setValue(order)
             self.ref.child("base/pot").setValue(ServerValue.timestamp())
             
