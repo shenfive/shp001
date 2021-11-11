@@ -1884,7 +1884,7 @@
         <scene sceneID="CkW-6J-kbx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ika-ck-UL9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="奬勵金計算" image="square.and.arrow.up.circle" catalog="system" selectedImage="square.and.arrow.up.circle.fill" id="JqJ-Py-a4U"/>
+                    <tabBarItem key="tabBarItem" title="奬勵金計算" image="commission" selectedImage="commission" id="JqJ-Py-a4U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5rV-zs-bag">
                         <rect key="frame" x="0.0" y="20" width="768" height="50"/>
@@ -2079,7 +2079,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="nextMonth:" destination="4V6-Zi-7Mt" eventType="touchUpInside" id="hUq-6L-eXY"/>
+                                    <action selector="lastMonth:" destination="4V6-Zi-7Mt" eventType="touchUpInside" id="XWA-aA-CF6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdU-Ct-Gyk">
@@ -2094,7 +2094,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="lastMonth:" destination="4V6-Zi-7Mt" eventType="touchUpInside" id="ACe-zq-WT2"/>
+                                    <action selector="nextMonth:" destination="4V6-Zi-7Mt" eventType="touchUpInside" id="1NN-os-aqm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1u-4G-w7b">
@@ -2302,8 +2302,8 @@
                         <outlet property="byMemberButton" destination="m3L-7a-p8E" id="B50-bo-77n"/>
                         <outlet property="byOrderButton" destination="D1u-4G-w7b" id="gnZ-uO-HBf"/>
                         <outlet property="dateInfoLabel" destination="Ja8-lz-Y2l" id="x1f-ON-GH2"/>
-                        <outlet property="lastMonthButton" destination="Aw8-cs-6sI" id="RF7-JR-CuE"/>
-                        <outlet property="nextMonthButton" destination="tdU-Ct-Gyk" id="kb3-0S-fdK"/>
+                        <outlet property="lastMonthButton" destination="Aw8-cs-6sI" id="0F3-Kr-tVz"/>
+                        <outlet property="nextMonthButton" destination="tdU-Ct-Gyk" id="Qeq-4K-cxN"/>
                         <outlet property="theTableView" destination="awp-fq-oAH" id="efw-h2-KAe"/>
                     </connections>
                 </viewController>
@@ -2598,11 +2598,10 @@
     </scenes>
     <resources>
         <image name="choices" width="25" height="25"/>
+        <image name="commission" width="25" height="25"/>
         <image name="copyright" width="32" height="32"/>
         <image name="logo" width="277" height="86.5"/>
         <image name="people" width="25" height="25"/>
-        <image name="square.and.arrow.up.circle" catalog="system" width="128" height="121"/>
-        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="shp-button-blue">
             <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

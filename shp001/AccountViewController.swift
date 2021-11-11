@@ -44,8 +44,6 @@ class AccountViewController: UIViewController {
             formater.dateFormat = "MM/dd HH:mm:ss"
             let string = formater.string(from: loginDate)
             liginTimeLabel.text = "登入時間 : \(string)"
-            print(userInfo["level"] as! Int)
-
             switch userInfo["level"] as! Int{
             case 1:
                 levelLabel.text = "帳號層級:管理者"

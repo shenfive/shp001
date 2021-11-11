@@ -34,7 +34,7 @@ class ForgetPasswordViewController: UIViewController {
             return
         }
         Tools.showIndicator(inController: self)
-        ref.child("userK/\(account)").observeSingleEvent(of: .value, with: { snapshot in
+        ref.child("users/\(account)/email").observeSingleEvent(of: .value, with: { snapshot in
             // Get user value
             let realAccount = snapshot.value as? String
             if let realAccount = realAccount{

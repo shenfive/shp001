@@ -9,9 +9,9 @@ import UIKit
 import Firebase
 
 class BonusListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-
     
-
+    
+    
     var selectedMonth = ""
     var ref:DatabaseReference!
     var orders:[Order] = []
@@ -31,7 +31,6 @@ class BonusListViewController: UIViewController,UITableViewDataSource,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "獎勵金列表"
-        print(selectedMonth)
         ref = Database.database().reference()
         reflashData()
         theTableView.delegate = self
@@ -42,7 +41,7 @@ class BonusListViewController: UIViewController,UITableViewDataSource,UITableVie
         nextMonthButton.layer.cornerRadius = 20
     }
     
-
+    
     
     func calculateBonus(){
         if orders.count == 0 { return }
@@ -84,7 +83,7 @@ class BonusListViewController: UIViewController,UITableViewDataSource,UITableVie
                     byMemberArray.append([order.intorL1:0])
                 }
             }
-
+            
             if order.intorL2 != ""{
                 if byMemberArray.filter { item in
                     return item.keys.first == order.intorL2
@@ -96,14 +95,12 @@ class BonusListViewController: UIViewController,UITableViewDataSource,UITableVie
             for i in 0...byMemberArray.count-1{
                 if byMemberArray[i].keys.first == order.intorL1{
                     var commission = byMemberArray[i][order.intorL1] ?? 0
-                    print("=======c1]\(commission)")
                     commission += Int(order.intorL1Commission)
                     byMemberArray[i][order.intorL1] = commission
                 }
                 
                 if byMemberArray[i].keys.first == order.intorL2{
                     var commission = byMemberArray[i][order.intorL2] ?? 0
-                    print("=======c2]\(commission)")
                     commission += Int(order.intorL2Commission)
                     byMemberArray[i][order.intorL2] = commission
                 }
@@ -141,9 +138,8 @@ class BonusListViewController: UIViewController,UITableViewDataSource,UITableVie
             self.orders.removeAll()
             if snapshot.hasChildren() == true {
                 for item in snapshot.children{
-                    
                     if let snapshotitem = item as? DataSnapshot{
-
+                        
                         let time = Date(timeIntervalSince1970:(snapshotitem.childSnapshot(forPath: "time").value as! Double) / 1000 )
                         
                         var theOrder = Order()
@@ -158,18 +154,20 @@ class BonusListViewController: UIViewController,UITableViewDataSource,UITableVie
                         theOrder.disconuntRate = snapshotitem.childSnapshot(forPath: "drate").value as! Double
                         theOrder.payMent = snapshotitem.childSnapshot(forPath: "pay").value as! String
                         theOrder.isFirstOrder = snapshotitem.childSnapshot(forPath: "isFirstPO").value as! Bool
-                        
                         self.orders.append(theOrder)
                     }
                 }
+                self.calculateBonus()
+            }else{
+                self.byMemberArray.removeAll()
+                self.theTableView.reloadData()
             }
-            self.calculateBonus()
         }
     }
     
     
-
-
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch listMode{
         case "byOrder":
@@ -226,9 +224,9 @@ class BonusListViewController: UIViewController,UITableViewDataSource,UITableVie
         default:
             return UITableViewCell()
         }
-
+        
     }
-
+    
     @IBAction func byMemberAction(_ sender: Any) {
         listMode = "byMember"
         theTableView.reloadData()

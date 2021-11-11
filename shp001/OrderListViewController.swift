@@ -119,7 +119,6 @@ class OrderListViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderTableViewCell") as! OrderTableViewCell
-        print(orders[indexPath.row])
         let theOrder = orders[indexPath.row]
         cell.ponumber.text = "訂單編號: \(theOrder.poNumber)"
         cell.salesName.text = "業務員: \(theOrder.sales)"

@@ -24,7 +24,6 @@ class ChangePasswordViewController: UIViewController {
         title = "變更密碼"
         self.tabBarController?.tabBar.isHidden = true
         let x = UserDefaults.standard.value(forKey: "lastPasword") as! String
-        print("x:\(x)")
     }
     
     

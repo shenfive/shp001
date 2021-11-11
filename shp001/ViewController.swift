@@ -122,7 +122,6 @@ class ViewController: UIViewController {
                                 UserDefaults.standard.synchronize()
                                 self.passwordTextField.text = nil
                                 self.accountTextField.text = nil
-                                print("pp:\(password.md5())")
                             }
                         }
                     }else{

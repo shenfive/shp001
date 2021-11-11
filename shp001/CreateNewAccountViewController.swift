@@ -35,7 +35,6 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
         removeItroButton.layer.cornerRadius = 16.5
         createAccountButton.layer.cornerRadius = 22
         ref = Database.database().reference()
-        print(birthdatDatePicker.date.timeIntervalSince1970)
     }
     
 
@@ -151,8 +150,6 @@ class CreateNewAccountViewController: UIViewController, UIPickerViewDelegate, UI
                                     Auth.auth().signIn(withEmail: lastAccount,
                                                        password: lastPasword) { result, error in
                                         Tools.removeIndicator(inController: self)
-                                        print("UserUID")
-                                        print(Auth.auth().currentUser?.uid)
                                         if let error = error{
                                             self.showAlert("重登帳號錯誤\nCode:\(error.localizedDescription)")
                                         }else{
