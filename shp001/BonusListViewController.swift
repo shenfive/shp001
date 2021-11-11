@@ -221,7 +221,6 @@ class BonusListViewController: UIViewController,UITableViewDataSource,UITableVie
             formatter.numberStyle = .currency
             let commissionString = formatter.string(from: NSNumber(value: commission)) ?? ""
             
-            
             cell.commissionThisMonth.text = "本月份獎金： \(commissionString)"
             return cell
         default:
